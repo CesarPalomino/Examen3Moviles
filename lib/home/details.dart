@@ -38,7 +38,11 @@ class _DetailsState extends State<Details> {
           child: bandera
               ? Column(
                   children: <Widget>[
-                    Image.memory(imageBytes),
+                    CustomPaint(
+                      foregroundPainter: RectPainter(
+                          pointsList: widget.barcode.puntosEsquinas),
+                      child: Image.memory(imageBytes),
+                    ),
                     SizedBox(
                       height: 10,
                     ),
